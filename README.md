@@ -7,15 +7,15 @@ First, complete steps 1 and 2 of contributing.
 
 **Prerequisites**
 
-I'm assuming your developing in linux.  In which case you should only need to make sure that `cmake` is installed.
+I'm assuming you're developing in linux.  In which case you should only need to make sure that `cmake` is installed.
 
-`
+```
 cd invpend
 mkdir build
 cd build
 cmake ..
 make
-`
+```
 
 ## Contributing
 
