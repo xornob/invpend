@@ -1,0 +1,18 @@
+#https://github.com/facebookarchive/RakNet/blob/master/CmakeIncludes/CmakeMacros.txt
+
+MACRO(STDPROJECT PROJECT_NAME)
+	project(${PROJECT_NAME})
+	FILE(GLOB ALL_SOURCE_FILES *.cc)
+	FILE(GLOB ALL_HEADER_FILES *.h)
+	add_executable(${PROJECT_NAME} ${ALL_SOURCE_FILES} ${ALL_HEADER_FILES})
+	target_include_directories(${PROJECT_NAME} PUBLIC ${INVPEND_INCLUDE_ONLY_DIR} PUBLIC ./)
+	target_link_libraries(${PROJECT_NAME} ${INVPEND_COMMON_LIBS})
+ENDMACRO(STDPROJECT)
+
+#Gets the current foldername without the path
+MACRO(GETCURRENTFOLDER)
+	string(REGEX REPLACE
+	  ".+/(.?)"
+	  "\\1"
+	  current_folder "${CMAKE_CURRENT_SOURCE_DIR}")
+ENDMACRO(GETCURRENTFOLDER)
